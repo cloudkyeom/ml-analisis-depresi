@@ -60,7 +60,7 @@ Setiap tahap analisis akan menampilkan plot secara berurutan — tutup jendela p
 ## Output yang Dihasilkan
 
 - Grafik distribusi, korelasi, dan boxplot (EDA)
-- Confusion matrix Random Forest
+- Confusion matrix Random Forest dan logistic regression
 - Ranking feature importance
 - SHAP summary plot (dampak tiap fitur terhadap prediksi)
 - SHAP force plot (penjelasan prediksi untuk 1 individu)
