@@ -47,14 +47,14 @@ pip install pandas numpy matplotlib seaborn scikit-learn shap
 ## Cara Menjalankan
 
 ```bash
-python starter_analisis_depresi_fixed.py
+cd script
+python main.py
 ```
 
 Saat dijalankan, script akan meminta input:
 
 1. **Path dataset (.csv)** — masukkan path menuju `Depression_Student_Dataset.csv`
 2. **Index sampel** (di akhir) — untuk menampilkan SHAP force plot dari satu mahasiswa tertentu (index sesuai baris di `X_test`)
-
 Setiap tahap analisis akan menampilkan plot secara berurutan — tutup jendela plot untuk melanjutkan ke tahap berikutnya.
 
 ## Output yang Dihasilkan
@@ -68,7 +68,8 @@ Setiap tahap analisis akan menampilkan plot secara berurutan — tutup jendela p
 
 ## Catatan & Batasan
 
-- Baris dengan missing value akan dihapus (`dropna()`) — cek jumlah `isnull().sum()` di output untuk mengetahui seberapa banyak data yang terbuang.
+- Baris dengan missing value akan dihapus (`dropna()`)
+- cek jumlah `isnull().sum()` di output untuk mengetahui seberapa banyak data yang terbuang.
 - Encoding ordinal (`Sleep Duration`, `Dietary Habits`) mengasumsikan urutan level sesuai definisi di atas; sesuaikan mapping di kode jika kategori pada dataset berbeda.
 - Model dievaluasi dengan satu kali `train_test_split` (belum menggunakan cross-validation), sehingga hasil akurasi dapat sedikit bervariasi tergantung `random_state`.
 - SHAP `TreeExplainer` hanya kompatibel dengan model tree-based (Random Forest), bukan Logistic Regression.
